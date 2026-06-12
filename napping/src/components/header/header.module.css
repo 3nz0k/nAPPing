@@ -1,0 +1,57 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 5px 5px;
+    max-height: 50px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    height: 50px;
+}
+
+.logo p {
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.right {
+    display: flex;
+    gap: 25px;
+}
+
+.right select {
+    background-color: #ffffff;
+    padding: 3px;
+    width: 50px;
+}
+
+.right select::picker(select) {
+    margin-block-end: 1em;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+}
+
+.right select, select::picker(select) {
+    appearance: base-select;
+    align-items: center;
+}
+
+.right img {
+    height: 32px;
+    background-color: #5856cf;
+    border-radius: 50px;
+    padding: 5px;
+}

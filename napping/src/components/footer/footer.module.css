@@ -1,0 +1,23 @@
+.all {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-height: 50px;
+    height: 50px;
+    width: 100%;
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+}
+
+.footer p {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.footer img {
+    width: 24px;
+}

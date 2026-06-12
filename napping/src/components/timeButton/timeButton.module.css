@@ -1,0 +1,32 @@
+.button {
+    display: flex;
+    border-style: solid;
+    border-color: #46bea9;
+    border-radius: 20px;
+    border-width: 2px;
+    width: 250px;
+    height: 50px;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.button p {
+    font-size: 36px;
+    font-weight: 400;
+    color: #46bea9;
+}
+
+.button img {
+    filter: invert(71%) sepia(33%) saturate(677%) hue-rotate(120deg) brightness(87%) contrast(87%);
+}
+
+.button:hover, .buttonSelected {
+    background-color: #46bea9;
+}
+
+.button:hover p, .buttonSelected p {
+    color: #ffffff;
+}
+.button:hover img, .buttonSelected img {
+        filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7479%) hue-rotate(106deg) brightness(97%) contrast(108%);
+}

@@ -1,0 +1,100 @@
+.all {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-image: url("/napping_background.png");
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+    border-radius: 25px;
+}
+
+.napping {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.napping img {
+    height: 32px;
+}
+
+.napping p {
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.countDown {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.countDown p {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.countDown h1 {
+    font-size: 72px;
+}
+
+.progressBar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.progressBar progress[value] {
+    /* Reset the default appearance */
+    -webkit-appearance: none;
+    appearance: none;
+    
+    width: 350px;
+    height: 20px;
+}
+
+.progressBar progress[value]::-webkit-progress-bar {
+    background-color: #e9eff3;
+    border-radius: 20px;
+}
+
+.progressBar progress[value]::-webkit-progress-value {
+    background: linear-gradient(90deg, #40af6b, #1c97a3);
+    border-radius: 20px;
+}
+
+.progressBar p {
+    color: #46bea9;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.leftButton img, .rightButton img {
+    height: 16px;
+}
+
+.leftButton p, .rightButton p {
+    color: #ffffff;
+}
+
+.leftButton button, .rightButton button {
+    border: none;
+    height: 50px;
+    width: 200px;
+    border-radius: 15px;
+}
+
+.leftButton button {
+    background-color: #80ef80;
+}
+.rightButton button {
+    background-color: #ff746c;
+}
+
+.buttons {
+    display: flex;
+    gap: 50px;
+}
