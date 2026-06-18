@@ -15,6 +15,7 @@ export default function useCountdown(minutes, onComplete) {
 
   useEffect(() => {
     setSecondsLeft(minutes * 60)
+    // setSecondsLeft(minutes)
   }, [minutes])
 
   /**

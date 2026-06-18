@@ -24,7 +24,7 @@ function Duree( {minutes, setMinutes}) {
     
     return (
         <div className={styles.all}>
-            <div>
+            <div className={styles.presetContainer}>
                 <div className={styles.text}>
                     <img src="/clock.svg" alt="clock" />
                     <p>Durée de la sieste</p>
@@ -49,14 +49,14 @@ function Duree( {minutes, setMinutes}) {
                 <p>ou</p>
                 <div className={styles.line}></div>
             </div>
-            <div>
+            <div className={styles.customContainer}>
                 <div className={styles.text}>
                     <img src="/pencil.svg" alt="pencil"/>
-                    <p>Durée personnalisée</p>
+                    <p>Durée&nbsp;personnalisée</p>
                 </div>
                 <div className={styles.buttonPersoList}>
                     <ChangeTime isPlus="false" onClick={() => {
-                        reduceValue(5);
+                        reduceValue(1);
                         setCustomDurationHighlighted(true);
                         }                        
                     }/>

@@ -67,7 +67,7 @@
 }
 
 .progressBar p {
-    color: #46bea9;
+    color: var(--blue);
     font-size: 16px;
     font-weight: 700;
 }
@@ -88,10 +88,10 @@
 }
 
 .leftButton button {
-    background-color: #80ef80;
+    background-color: var(--green);
 }
 .rightButton button {
-    background-color: #ff746c;
+    background-color: var(--red);
 }
 
 .buttons {

@@ -1,26 +1,58 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import styles from "./napping.module.css";
 
 import useCountdown from "../useCountdown/useCountdown";
+import ModalAlarm from "../modalAlarm/modalAlarm";
 
-function Napping({ minutes }) {
+function Napping({ minutes, music, flexGrow}) {
+    const [isNow, setIsNow] = useState(false);
+    const audioRef = useRef();
+    
+    const stopAlarm = () => {
+        audioRef.current.pause();
+        audioRef.current.currentTime = 0;
+        setIsNow(false);
+    }
+    
     const { secondsLeft, start, stop } = useCountdown(minutes, () => {
-        alert('Temps écoulé !');
+        audioRef.current.play();
+        setIsNow(true);
     });
+    
+    useEffect(() => {
+        audioRef.current = new Audio(`/src/assets/${music}.mp3`);
+    }, [music]);
+
+    const minutesLeft = Math.floor(secondsLeft / 60);
+    const remainingSeconds = secondsLeft % 60;
+    let formattedTime;
+
+    if (remainingSeconds === 0)
+    {
+        formattedTime = `${minutesLeft}min` 
+    }
+    else if (minutesLeft === 0)
+    {
+        formattedTime = `${secondsLeft}sec`
+    }
+    else {
+        formattedTime = `${minutesLeft}min${remainingSeconds.toString().padStart(2, "0")}`;
+    }
 
     return (
-        <div className={styles.all}>
+        <div className={styles.all} style={{"flex-grow":flexGrow}}>
+            {isNow && <ModalAlarm onClose={stopAlarm}/>}
             <div className={styles.napping}>
                 <img src="/zzz.svg" alt="zzz" />
                 <p>Sieste en cours</p>
             </div>
             <div className={styles.countdown}>
                 <p>Temps restant :</p>
-                <h1>{secondsLeft}sec</h1>
+                <h1>{formattedTime}</h1>
             </div>
             <div className={styles.progressBar}>
                 <progress max={minutes*60} value={minutes*60-secondsLeft}></progress>
-                <p>33%</p>
+                <p>{Math.round(((minutes * 60 - secondsLeft) / (minutes * 60)) * 100)}%</p>
             </div>
             <div className={styles.buttons}>
                 <div className={styles.leftButton}>

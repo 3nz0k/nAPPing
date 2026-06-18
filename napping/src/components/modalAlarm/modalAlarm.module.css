@@ -1,0 +1,82 @@
+.modal {
+  width: min(90vw, 480px);
+  padding: clamp(4px, 4vw, 8px);
+  border-radius: 32px;
+  background: white;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 24px;
+
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(10px);
+}
+
+.modalContent {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+}
+
+.modalContent > img {
+  width: clamp(180px, 25vw, 240px);
+  height: auto;
+}
+
+.modalContent hr {
+  width: 100%;
+}
+
+.modalText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalText h1 {
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 700;
+}
+
+.modalText p {
+  font-size: clamp(16px, 2vw, 20px);
+}
+
+.button {
+    display: flex;
+    border-style: none;
+    background-color: var(--blue);
+    border-radius: 20px;
+    border-width: 2px;
+    width: 40%;
+    padding: 5px;
+    margin-bottom: 16px;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.buttonContent {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.buttonContent p {
+    font-size: clamp(16px, 2vw, 20px);
+    font-weight: 400;
+    color: #ffffff;
+}
+
+.buttonContent img {
+  filter: var(--white_svg);
+  height: 24px;
+}
