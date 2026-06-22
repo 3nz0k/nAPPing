@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "./params.module.css";
+import { assetPath } from "../../utils/assetPath";
 
 function Params( {music, setMusic}) {
     const hours = Array.from({ length: 24 }, (_, i) => i);
@@ -12,14 +13,14 @@ function Params( {music, setMusic}) {
         <div className={styles.all}>
             <div className={styles.title}>
                 <div className={styles.leftTitle}>
-                    <img src="/settings.svg" alt="settings" />
+                    <img src={assetPath("settings.svg")} alt="settings" />
                     <p>Paramètres</p>
                 </div>
-                <img src="/leaves.svg" alt="leaves" />
+                <img src={assetPath("leaves.svg")} alt="leaves" />
             </div>
             <div className={styles.hour}>
                 <div className={styles.hourTitle}>
-                    <img src="/clock.svg" alt="clock" />
+                    <img src={assetPath("clock.svg")} alt="clock" />
                     <p>Heure Quotidienne</p>
                 </div>
                 <select name="hour" id="hour">
@@ -35,7 +36,7 @@ function Params( {music, setMusic}) {
             <div className={styles.notif}>
                 <div className={styles.notifTop}>
                     <div className={styles.notifTitle}>
-                        <img src="/bell.svg" alt="bell" />
+                        <img src={assetPath("bell.svg")} alt="bell" />
                         <p>Notification</p>
                     </div>
                     <input className={styles.switch} type="checkbox"/>
@@ -45,7 +46,7 @@ function Params( {music, setMusic}) {
             <hr/>
             <div>
                 <div className={styles.alarmTitle}>
-                    <img src="/music.svg" alt="music" />
+                    <img src={assetPath("music.svg")} alt="music" />
                     <p>Type d'alarme</p>
                 </div>
                 <div className={styles.alarm}>
@@ -59,7 +60,7 @@ function Params( {music, setMusic}) {
                         <label htmlFor="waterfall">Waterfall</label>
                     </div>
                     <button className={styles.alarmButton}>
-                        <img src="/plus.svg" alt="plus" />
+                        <img src={assetPath("plus.svg")} alt="plus" />
                         <p>Importez votre Alarme</p>
                     </button>
                 </div>

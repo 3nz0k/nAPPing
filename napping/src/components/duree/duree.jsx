@@ -3,6 +3,7 @@ import { useState } from "react"
 import styles from "./duree.module.css";
 import TimeButton from "../timeButton/timeButton";
 import ChangeTime from "../changeTime/changeTime";
+import { assetPath } from "../../utils/assetPath";
 
 function Duree( {minutes, setMinutes}) {
     // const [time, setMinutes] = useState(0);
@@ -26,7 +27,7 @@ function Duree( {minutes, setMinutes}) {
         <div className={styles.all}>
             <div className={styles.presetContainer}>
                 <div className={styles.text}>
-                    <img src="/clock.svg" alt="clock" />
+                    <img src={assetPath("clock.svg")} alt="clock" />
                     <p>Durée de la sieste</p>
                 </div>
                 <div className={styles.buttonDefList}>
@@ -51,7 +52,7 @@ function Duree( {minutes, setMinutes}) {
             </div>
             <div className={styles.customContainer}>
                 <div className={styles.text}>
-                    <img src="/pencil.svg" alt="pencil"/>
+                    <img src={assetPath("pencil.svg")} alt="pencil"/>
                     <p>Durée&nbsp;personnalisée</p>
                 </div>
                 <div className={styles.buttonPersoList}>

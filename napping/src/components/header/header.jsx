@@ -1,10 +1,11 @@
 import styles from "./header.module.css";
+import { assetPath } from "../../utils/assetPath";
 function Header() {
 
     return (
         <header className={styles.header}>
             <div className={styles.logo}>
-                <img src="/logo.png" alt="logo"/>
+                <img src={assetPath("logo.png")} alt="logo"/>
                 <p>nAPPing</p>
             </div>
             <div className={styles.right}>
@@ -12,7 +13,7 @@ function Header() {
                     <option value="french">FR</option>
                     <option value="english">EN</option>
                 </select>
-                <img src="/sun.svg" alt="dark-logo" />
+                <img src={assetPath("sun.svg")} alt="dark-logo" />
             </div>
         </header>
     )

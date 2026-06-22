@@ -3,6 +3,14 @@ import styles from "./napping.module.css";
 
 import useCountdown from "../useCountdown/useCountdown";
 import ModalAlarm from "../modalAlarm/modalAlarm";
+import { assetPath } from "../../utils/assetPath";
+import birdsongUrl from "../../assets/birdsong.mp3";
+import waterfallUrl from "../../assets/waterfall.mp3";
+
+const alarmSounds = {
+    Birdsong: birdsongUrl,
+    Waterfall: waterfallUrl,
+};
 
 function Napping({ minutes, music, flexGrow}) {
     const [isNow, setIsNow] = useState(false);
@@ -20,7 +28,7 @@ function Napping({ minutes, music, flexGrow}) {
     });
     
     useEffect(() => {
-        audioRef.current = new Audio(`/src/assets/${music}.mp3`);
+        audioRef.current = new Audio(alarmSounds[music] ?? birdsongUrl);
     }, [music]);
 
     const minutesLeft = Math.floor(secondsLeft / 60);
@@ -40,10 +48,10 @@ function Napping({ minutes, music, flexGrow}) {
     }
 
     return (
-        <div className={styles.all} style={{"flex-grow":flexGrow}}>
+        <div className={styles.all} style={{"flex-grow": flexGrow, backgroundImage: `url("${assetPath("napping_background.png")}")`}}>
             {isNow && <ModalAlarm onClose={stopAlarm}/>}
             <div className={styles.napping}>
-                <img src="/zzz.svg" alt="zzz" />
+                <img src={assetPath("zzz.svg")} alt="zzz" />
                 <p>Sieste en cours</p>
             </div>
             <div className={styles.countdown}>
@@ -57,13 +65,13 @@ function Napping({ minutes, music, flexGrow}) {
             <div className={styles.buttons}>
                 <div className={styles.leftButton}>
                     <button onClick={start}>
-                        <img src="/play.svg" alt="play" />
+                        <img src={assetPath("play.svg")} alt="play" />
                         <p>Démarrer</p>
                     </button>
                 </div>
                 <div className={styles.rightButton}>
                     <button onClick={stop}>
-                        <img src="/square.svg" alt="square" />
+                        <img src={assetPath("square.svg")} alt="square" />
                         <p>Arrêter</p>
                     </button>
                 </div>
