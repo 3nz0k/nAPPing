@@ -60,7 +60,7 @@ function Napping({ minutes, music, flexGrow}) {
             </div>
             <div className={styles.progressBar}>
                 <progress max={minutes*60} value={minutes*60-secondsLeft}></progress>
-                <p>{Math.round(((minutes * 60 - secondsLeft) / (minutes * 60)) * 100)}%</p>
+                <p>{minutes == 0 ? 0 : Math.round(((minutes * 60 - secondsLeft) / (minutes * 60)) * 100)}%</p>
             </div>
             <div className={styles.buttons}>
                 <div className={styles.leftButton}>
